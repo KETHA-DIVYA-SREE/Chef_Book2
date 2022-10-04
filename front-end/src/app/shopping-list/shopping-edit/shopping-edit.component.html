@@ -1,0 +1,43 @@
+<div class="my-2">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <label for="Ingredient_Name" class="form-label fw-bold">
+        Ingredient_Name
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingredient Name"
+        id="Ingredient_Name"
+        #nameInput
+      />
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="Quantity" class="form-label fw-bold">Quantity</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Quantity"
+        id="Quantity"
+        #amountInput
+      />
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-success btn-sm rounded-pill"
+        (click)="onAddItem()"
+      >
+        Add
+      </button>
+      <button type="button" class="btn btn-dark btn-sm rounded-pill">
+        Clear
+      </button>
+      <button type="button" class="btn btn-danger btn-sm rounded-pill">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <img
+        [src]="recipe.imagePath"
+        class="img-fluid rounded"
+        [alt]="recipe.name"
+        style="height: 50vh;"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h2>{{ recipe.name }}</h2>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-dark dropdown-toggle rounded-pill"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Manage
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" (click)="onAddToShoppingList()">Add Ingredients to Shopping List</a></li>
+          <li><a class="dropdown-item">Edit Recipe</a></li>
+          <li><a class="dropdown-item">Delete Recipe</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">{{ recipe.description }}</div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ul
+        class="list-group list-group-flush"
+        *ngFor="let ingredient of recipe.ingredients"
+      >
+        <a
+          class="
+            list-group-item list-group-item-action
+            d-flex
+            justify-content-between
+            align-items-center
+          "
+        >
+          <div class="ms-2 me-auto">
+            <div class="fw-bold">{{ ingredient.name }}</div>
+          </div>
+          <span class="badge bg-primary rounded-pill">
+            {{ ingredient.amount }}
+          </span>
+        </a>
+      </ul>
+    </div>
+  </div>
+</div>

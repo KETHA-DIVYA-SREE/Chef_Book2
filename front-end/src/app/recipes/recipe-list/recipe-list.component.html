@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="d-grid">
+    <button class="btn btn-success rounded-pill" type="button">
+      New Recipe
+    </button>
+  </div>
+  <div class="list-group list-group-flush my-2">
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+    ></app-recipe-item>
+  </div>
+</div>
